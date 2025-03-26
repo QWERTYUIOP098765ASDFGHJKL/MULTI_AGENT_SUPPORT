@@ -7,9 +7,10 @@ app = Flask(__name__)
 def submit_query():
     data = request.get_json()
     query_text = data.get('query')
-
+    
     # Send query to classification agent
     response = requests.post('http://localhost:5001/classify', json={'query': query_text})
+    
     return response.json()
 
 if __name__ == '__main__':
