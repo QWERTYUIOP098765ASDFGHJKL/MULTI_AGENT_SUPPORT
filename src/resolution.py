@@ -10,7 +10,7 @@ def get_solution_from_db(category):
             user="postgres",
             password="your_password",
             host="localhost",
-            port="5432"
+            port="5002"
         )
         cursor = connection.cursor()
 
@@ -31,4 +31,4 @@ def resolve():
     return jsonify({'category': category, 'solution': solution})
 
 if __name__ == '__main__':
-    app.run(port=5432)
+    app.run(port=5002)
